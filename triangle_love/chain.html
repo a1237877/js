@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Animal(planet){
+            this.planet=planet;
+
+        }
+        Animal.prototype.getPlanet=function(){
+            return this.planet;
+        }
+        function Person(name){
+            this.name=name;
+        }
+        //继承
+        Person.prototype=new Animal('earth');//可以拿到原型链上的对象的属性
+        Person.prototype.getName=function(){
+            return this.name;
+        }
+        
+        var person=new Person("王吉");
+        // person.planet
+        // person.getPlanet() 继承
+        // Person.prototype.__proto__===Animal.prototype
+    </script>
+</body>
+</html>
